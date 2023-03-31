@@ -7,10 +7,11 @@ This project was created using python and it's built-in functions.
 RPN stands for "Reverse Polish Notation". 
 
 What we normally use to write an equation is called the infix notation, for example :
-### ((1 + 2) / 3)
+##### ((1 + 2) / 3)
 
 This is the equivalent of this equation using the RPN : 
-### 1 2 + 3 /
+
+##### 1 2 + 3 /
 
 ## What can you use this calculator for?
 
@@ -21,6 +22,6 @@ You will also see the infix notation before your result.
 
 Now that I explained the RPN and goal of this application, here is how to use it:\
 
-### python rpn_calculator.py
+##### python3 rpn_calculator.py 
 
 After launching this application using the command line above you will need to type a valid RPN equation to get its result.
