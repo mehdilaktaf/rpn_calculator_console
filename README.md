@@ -22,6 +22,12 @@ You will also see the infix notation before your result.
 
 Now that I explained the RPN and goal of this application, here is how to use it:\
 
-##### python3 rpn_calculator.py 
-
+#### `python rpn_calculator.py` 
 After launching this application using the command line above you will need to type a valid RPN equation to get its result.
+
+####or
+
+#### `python rpn_calculator.py "tokens"`
+Where tokens is a valid RPN equation.
+
+
