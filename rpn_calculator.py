@@ -1,14 +1,15 @@
 import cProfile
 import operator
+import sys
 
 def rpn_compute(tokens):        
     '''
     Returns the result of a reverse polish notation calculation.
 
-            Parameters:
-                    tokens (str): A rpn calculation
-            Returns:
-                    result (int): Integer result of the calculation
+    Parameters:
+        tokens (str): A rpn calculation
+    Returns:
+        result (int): Integer result of the calculation
     '''
     # To augment the performance and reduce code we will use this "OPERATORS" dict()
     OPERATORS = {
@@ -38,12 +39,12 @@ def rpn_compute(tokens):
 
 def rpn_to_infix(tokens):
     '''
-    Returns the reverse polish notation calculation in infix notation.
+    Returns the reverse polish notation equation in infix notation.
 
-            Parameters:
-                    tokens (str): A rpn calculation
-            Returns:
-                    result (str): String representing the infix equivalent of the rpn
+    Parameters:
+        tokens (str): A rpn calculation
+    Returns:
+        result (str): String representing the infix equivalent of the rpn
     '''
     stack = []
 
@@ -62,9 +63,12 @@ def rpn_to_infix(tokens):
     return stack.pop()
 
 if __name__ == '__main__':
-    # Here we assume the user will enter a proper rpn equation
-
-    tokens = input("Please enter a reverse polish notation equation using spaces: ")
+    if len(sys.argv) > 1:
+        # get tokens from command line argument
+        tokens = sys.argv[1]
+    else:
+        # ask user to input tokens
+        tokens = input("Please enter a reverse polish notation equation using spaces: ")
 
     cProfile.run("rpn_compute(tokens)") # This is to test the speed of the function
     print("The result of {} is {}.".format(rpn_to_infix(tokens),rpn_compute(tokens)))
